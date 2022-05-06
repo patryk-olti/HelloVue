@@ -16,7 +16,7 @@
         <label> ważne </label>
     </div>
 
-    <button @click="helloClick">
+    <button @click="addTask">
         dodaj zadanie
     </button>
 
@@ -52,8 +52,9 @@ export default {
       }
   },
   methods: {
-      helloClick(){
+      addTask(){
         console.log('hello: ', this.newTask);
+        this.tasks.push(this.newTask);
         
         this.newTask = {
             title: '',
