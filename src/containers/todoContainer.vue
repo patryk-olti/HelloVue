@@ -3,7 +3,7 @@
         <div class="container--border">
             <input type="text" placeholder="wprowadź zadanie" v-model="newTask.title" class='input__title'/>
 
-            <div>
+            <div class='select__category'>
                 <select 
                     name='categories' 
                     id='categories' 
@@ -91,4 +91,16 @@ export default {
         border-bottom: 1px solid rgb(100, 100, 100);
         text-align: center;
     }
+
+    .select__category{
+        width: 100%;
+        text-align: center;
+    }
+
+    .select__category select{
+        padding: 2px 5px;
+        text-align: center;
+        cursor: pointer;
+    }
+
 </style>
