@@ -32,7 +32,7 @@
         <label> ważne </label>
     </div>
 
-    <button>
+    <button @click="helloClick">
         dodaj zadanie
     </button>
 
@@ -60,7 +60,12 @@ export default {
         },
         ]
       }
-
+  },
+  methods: {
+      helloClick(){
+          console.log('hello: ', this.newTask);
+          this.newTask = '';
+      }
   }
 }
 </script>
