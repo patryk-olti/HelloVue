@@ -3,12 +3,18 @@
     <input type="text" placeholder="wprowadź zadanie" v-model="newTask.title" />
 
     <div>
-        <ul v-for='category in categories' v-bind:key='category'>
-            <li>
-                <input type='checkbox' id='category'>
-                <label for='category' >{{ category }}</label>
-            </li>
-        </ul>
+        <select 
+            name='categories' 
+            id='categories' 
+            v-model='newTask.category' 
+        >
+            <option 
+                v-for='category in categories' :value='category'
+                v-bind:key='category'    
+            >
+                {{ category }}
+            </option>  
+        </select>
     </div>
 
     <div>
@@ -33,15 +39,7 @@ export default {
   data(){
       return{
         categories: ['hobby', 'praca', 'sport', 'inne'],
-        tasks: [{
-            id: 1,
-            title: 'trening',
-            category: 'sport'
-        },{
-            id: 2,
-            title: 'nauka Vue',
-            category: 'hobby'
-        }],
+        tasks: [],
         newTask: {
             title: '',
             category: 'inne',
