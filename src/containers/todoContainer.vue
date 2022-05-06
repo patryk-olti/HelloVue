@@ -5,14 +5,14 @@
     <div>
         <ul v-for='category in categories' v-bind:key='category'>
             <li>
-                <input type='checkbox'>
-                <label>{{ category }}</label>
+                <input type='checkbox' id='category'>
+                <label for='category' >{{ category }}</label>
             </li>
         </ul>
     </div>
 
     <div>
-        <input type='checkbox' />
+        <input type='checkbox' v-model='newTask.important' />
         <label> ważne </label>
     </div>
 
@@ -33,13 +33,6 @@ export default {
   data(){
       return{
         categories: ['hobby', 'praca', 'sport', 'inne'],
-        newTask: {
-            title: '',
-            category: 'inne',
-            id: Math.random(),
-            important: false,
-            completed: false
-        },
         tasks: [{
             id: 1,
             title: 'trening',
@@ -48,14 +41,27 @@ export default {
             id: 2,
             title: 'nauka Vue',
             category: 'hobby'
+        }],
+        newTask: {
+            title: '',
+            category: 'inne',
+            id: Math.random(),
+            important: false,
+            completed: false
         },
-        ]
       }
   },
   methods: {
       helloClick(){
-          console.log('hello: ', this.newTask);
-          this.newTask = '';
+        console.log('hello: ', this.newTask);
+        
+        this.newTask = {
+            title: '',
+            category: 'inne',
+            id: Math.random(),
+            important: false,
+            completed: false
+        }
       }
   }
 }
