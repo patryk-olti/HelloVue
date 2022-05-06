@@ -76,6 +76,11 @@ export default {
     }
 
     .container--border{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
         padding: 10px;
         border: 1px solid black;
         border-radius: 5px;
