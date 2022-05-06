@@ -36,9 +36,8 @@
         dodaj zadanie
     </button>
 
-    <ul>
-        <li> trening siłowy </li>
-        <li> nauka Vue.JS </li>
+    <ul v-for="task in tasks" v-bind:key="task.id">
+        <li>{{ task.title }}</li>
     </ul>
 
   </div>
@@ -46,7 +45,22 @@
 
 <script>
 export default {
-  name: 'todoContainer'
+  name: 'todoContainer',
+  data(){
+      return{
+        tasks: [{
+            id: 1,
+            title: 'trening',
+            category: 'sport'
+        },{
+            id: 2,
+            title: 'nauka Vue',
+            category: 'hobby'
+        },
+        ]
+      }
+
+  }
 }
 </script>
 
