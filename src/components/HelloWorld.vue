@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    elo
+    <p>Zaplanuj swój dzień!</p>
   </div>
 </template>
 
@@ -11,5 +11,9 @@ export default {
 </script>
 
 <style scoped>
-
+  .hello{
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+  }
 </style>
