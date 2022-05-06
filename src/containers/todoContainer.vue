@@ -18,12 +18,16 @@
                 </select>
             </div>
 
-            <div>
-                <input type='checkbox' v-model='newTask.important' />
-                <label> ważne </label>
+            <div class="checkbox__important">
+                <input 
+                    type='checkbox' 
+                    id="important"
+                    v-model='newTask.important' />
+                <label
+                    for="important"> ważne </label>
             </div>
 
-            <button @click="addTask">
+            <button @click="addTask" class="button__add">
                 dodaj zadanie
             </button>
 
@@ -53,7 +57,9 @@ export default {
   },
   methods: {
       addTask(){
-        this.tasks.push(this.newTask);
+        if(this.newTask.title !== ''){
+            this.tasks.push(this.newTask);
+        }
         
         this.newTask = {
             title: '',
@@ -81,7 +87,7 @@ export default {
         justify-content: center;
         align-items: center;
 
-        padding: 10px;
+        padding: 20px;
         border: 1px solid black;
         border-radius: 5px;
         box-shadow: 6px 6px 10px 0px rgb(42, 43, 49);
@@ -95,6 +101,7 @@ export default {
         border: none;
         border-bottom: 1px solid rgb(100, 100, 100);
         text-align: center;
+        user-select: none;
     }
 
     .select__category{
@@ -106,6 +113,26 @@ export default {
         padding: 2px 5px;
         text-align: center;
         cursor: pointer;
+        border: 1px solid black;
+        user-select: none;
+    }
+
+    .checkbox__important{
+        margin: 5px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: red;
+        user-select: none;
+    }
+
+    .button__add{
+        padding: 5px 10px;
+        margin: 15px 0 5px;
+        border: 1px solid black;
+        box-shadow: 2px 2px 4px 0px rgb(42, 43, 49);
+        background-color: transparent;
+        cursor: pointer;
+        user-select: none;
     }
 
 </style>
