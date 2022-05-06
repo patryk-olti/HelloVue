@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <input type="text" />
+    <input type="text" placeholder="wprowadź zadanie" v-model="newTask" />
 
     <div>
         <ul>
@@ -48,6 +48,7 @@ export default {
   name: 'todoContainer',
   data(){
       return{
+        newTask: '',
         tasks: [{
             id: 1,
             title: 'trening',
