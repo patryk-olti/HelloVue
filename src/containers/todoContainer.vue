@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="container--border">
-            <input type="text" placeholder="wprowadź zadanie" v-model="newTask.title" />
+            <input type="text" placeholder="wprowadź zadanie" v-model="newTask.title" class='input__title'/>
 
             <div>
                 <select 
@@ -53,7 +53,6 @@ export default {
   },
   methods: {
       addTask(){
-        console.log('hello: ', this.newTask);
         this.tasks.push(this.newTask);
         
         this.newTask = {
@@ -81,5 +80,15 @@ export default {
         border: 1px solid black;
         border-radius: 5px;
         box-shadow: 6px 6px 10px 0px rgb(42, 43, 49);
+    }
+
+    .input__title{
+        padding: 5px;
+        margin-bottom: 5px;
+        font-size: 1rem;
+
+        border: none;
+        border-bottom: 1px solid rgb(100, 100, 100);
+        text-align: center;
     }
 </style>
