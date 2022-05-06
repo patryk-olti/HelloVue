@@ -31,8 +31,8 @@
                 dodaj zadanie
             </button>
 
-            <ul v-for="task in tasks" v-bind:key="task.id">
-                <li>{{ task.title }}</li>
+            <ul v-for="task in tasks" v-bind:key="task.id" class="ul__tasks">
+                <li class='singleTask'>{{ task.title }}</li>
             </ul>
 
         </div>
@@ -45,7 +45,13 @@ export default {
   data(){
       return{
         categories: ['hobby', 'praca', 'sport', 'inne'],
-        tasks: [],
+        tasks: [{
+            title: 'Umyć auto',
+            category: 'inne',
+            id: Math.random(),
+            important: false,
+            completed: false
+        }],
         newTask: {
             title: '',
             category: 'inne',
@@ -133,6 +139,12 @@ export default {
         background-color: transparent;
         cursor: pointer;
         user-select: none;
+    }
+
+    .ul__tasks{
+        margin: 5px;
+        padding: 0;
+        list-style-type: none;
     }
 
 </style>
