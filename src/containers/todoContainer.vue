@@ -3,26 +3,10 @@
     <input type="text" placeholder="wprowadź zadanie" v-model="newTask.title" />
 
     <div>
-        <ul>
+        <ul v-for='category in categories' v-bind:key='category'>
             <li>
                 <input type='checkbox'>
-                <label> hobby </label>
-            </li>
-            <li>
-                <input type='checkbox'>
-                <label> praca </label>
-            </li>
-            <li>
-                <input type='checkbox'>
-                <label> sport </label>
-            </li>
-            <li>
-                <input type='checkbox'>
-                <label> obowiązki </label>
-            </li>
-            <li>
-                <input type='checkbox'>
-                <label> inne </label>
+                <label>{{ category }}</label>
             </li>
         </ul>
     </div>
@@ -48,6 +32,7 @@ export default {
   name: 'todoContainer',
   data(){
       return{
+        categories: ['hobby', 'praca', 'sport', 'inne'],
         newTask: {
             title: '',
             category: 'inne',
