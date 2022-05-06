@@ -26,7 +26,21 @@
             </li>
         </ul>
     </div>
-    
+
+    <div>
+        <input type='checkbox' />
+        <label> ważne </label>
+    </div>
+
+    <button>
+        dodaj zadanie
+    </button>
+
+    <ul>
+        <li> trening siłowy </li>
+        <li> nauka Vue.JS </li>
+    </ul>
+
   </div>
 </template>
 
