@@ -15,5 +15,6 @@ export default {
     font-size: 2rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 700;
+    text-align: center;
   }
 </style>
