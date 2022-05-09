@@ -31,28 +31,23 @@
                 dodaj zadanie
             </button>
 
-            <ul v-for="task in tasks" v-bind:key="task.id" class="ul__tasks" >
-                <li v-if="task.important == true" class='task--important'>{{ task.title }}</li>
-                <li v-else class='task--nonImportant'>{{ task.title }}</li>
-            </ul>
-
+            <TasksList :tasksArray="tasks" />
         </div>
     </div>
 </template>
 
 <script>
+import TasksList from '@/components/tasksList.vue';
+
 export default {
   name: 'todoContainer',
+  components: {
+    TasksList
+},
   data(){
       return{
         categories: ['hobby', 'praca', 'sport', 'inne'],
-        tasks: [{
-            title: 'Umyć auto',
-            category: 'inne',
-            id: Math.random(),
-            important: false,
-            completed: false
-        }],
+        tasks: [],
         newTask: {
             title: '',
             category: 'inne',
@@ -142,19 +137,4 @@ export default {
         user-select: none;
     }
 
-    .ul__tasks{
-        margin: 5px;
-        padding: 0;
-        list-style-type: none;
-    }
-
-    .task--important{
-        color: red;
-        font-size: 1.2rem;
-    }
-
-    .task--nonImportant{
-        color: black;
-        font-size: 1.2rem;
-    }
 </style>
