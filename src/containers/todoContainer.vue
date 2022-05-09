@@ -31,12 +31,9 @@
                 dodaj zadanie
             </button>
 
-            <ul v-for="task in tasks" v-bind:key="task.id" class="ul__tasks" >
-                <li v-if="task.important == true" class='task--important'>{{ task.title }}</li>
-                <li v-else class='task--nonImportant'>{{ task.title }}</li>
-            </ul>
 
-            <TasksList />
+
+            <TasksList :tasksArray="tasks" />
 
         </div>
     </div>
@@ -149,19 +146,4 @@ export default {
         user-select: none;
     }
 
-    .ul__tasks{
-        margin: 5px;
-        padding: 0;
-        list-style-type: none;
-    }
-
-    .task--important{
-        color: red;
-        font-size: 1.2rem;
-    }
-
-    .task--nonImportant{
-        color: black;
-        font-size: 1.2rem;
-    }
 </style>
