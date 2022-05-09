@@ -31,10 +31,7 @@
                 dodaj zadanie
             </button>
 
-
-
             <TasksList :tasksArray="tasks" />
-
         </div>
     </div>
 </template>
@@ -50,13 +47,7 @@ export default {
   data(){
       return{
         categories: ['hobby', 'praca', 'sport', 'inne'],
-        tasks: [{
-            title: 'Umyć auto',
-            category: 'inne',
-            id: Math.random(),
-            important: false,
-            completed: false
-        }],
+        tasks: [],
         newTask: {
             title: '',
             category: 'inne',

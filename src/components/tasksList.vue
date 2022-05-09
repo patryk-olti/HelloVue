@@ -1,7 +1,15 @@
 <template>
     <ul v-for="task in tasksArray" v-bind:key="task.id" class="ul__tasks" >
-        <li v-if="task.important == true" class='task--important'>{{ task.title }}</li>
-        <li v-else class='task--nonImportant'>{{ task.title }}</li>
+        <li             
+            :class="{
+                'task--nonImportant': task.important === false,
+                'task--hobby': task.category === 'hobby',
+                'task--work': task.category === 'praca',
+                'task--sport': task.category === 'sport',
+                'task--others': task.category === 'inne',
+                'task--important': task.important === true,
+            }"
+        >{{ task.title }}</li>
     </ul>
 </template>
 
@@ -11,7 +19,7 @@ export default {
   props: {
       tasksArray: {
           type: Array,
-          require: true
+          require: false
       }
   }
 }
@@ -24,13 +32,30 @@ export default {
         list-style-type: none;
     }
 
-    .task--important{
-        color: red;
+    .task--nonImportant{
+        color: black;
         font-size: 1.2rem;
     }
 
-    .task--nonImportant{
-        color: black;
+    .task--hobby{
+        color: blue;
+    }
+
+    .task--work{
+        color: yellow;
+    }
+
+    .task--sport{
+        background-color: aqua;
+    }
+
+    .task--others{
+        text-decoration: underline;
+    }
+
+    .task--important{
+        color: red;
+        background-color: transparent;
         font-size: 1.2rem;
     }
 </style>
