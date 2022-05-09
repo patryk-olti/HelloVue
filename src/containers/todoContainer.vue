@@ -36,13 +36,20 @@
                 <li v-else class='task--nonImportant'>{{ task.title }}</li>
             </ul>
 
+            <TasksList />
+
         </div>
     </div>
 </template>
 
 <script>
+import TasksList from '@/components/tasksList.vue';
+
 export default {
   name: 'todoContainer',
+  components: {
+    TasksList
+},
   data(){
       return{
         categories: ['hobby', 'praca', 'sport', 'inne'],
