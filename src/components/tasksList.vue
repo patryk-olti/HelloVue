@@ -58,4 +58,5 @@ export default {
         background-color: transparent;
         font-size: 1.2rem;
     }
+    
 </style>
